@@ -11,7 +11,7 @@ const client = require('socket.io-client')
 const PORT = process.env.PORT || 3001
 app.use(express.json())
 
-const blockchain = new Blockchain()
+const blockchain = new Blockchain(io)
 
 app.get('/blocks', (req,res) => {
     res.json(blockchain.chain)
